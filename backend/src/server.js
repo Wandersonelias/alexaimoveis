@@ -1,6 +1,6 @@
 const app = require('./app');
 
 
-app.listen('8080',()=>{
+app.listen(parseInt(process.env.PORT),()=>{
     console.log("Server is runnig");
 })
