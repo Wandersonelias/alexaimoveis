@@ -1,9 +1,32 @@
-function getImoveis(req,res,next) {
-    res.json({
-        endereco: "Rua dos Loucos Nº 0 - Jardim Marco Zero",
-        tipo: "Casa",
-        cidade: "Macapá"
-    })
+const imovelRepository = require('../repositories/imovelRepository');
+
+async function listarImoveis(req,res,next) {
+    const imoveis = await imovelRepository.getFindAllImoveis();
+    res.json(imoveis);
 }
 
-module.exports = {getImoveis}
+async function cadastrarImovel(req,res,next) {
+    const imovel = req.body;
+    console.log("--------------");
+    console.log(imovel);
+    const registro = await imovelRepository.createImovel(imovel);
+    res.status(201).json(imovel);
+}
+
+async function atualizarImovel(req,res,next) {
+    const imovel = req.body;
+    const id = req.params.id;
+    const registro = await imovelRepository.updatedImovel(imovel,id)
+    return res.json(registro);
+}
+
+function deletarImovel(req,res,next) {
+    
+}
+
+module.exports = {
+    listarImoveis,
+    cadastrarImovel,
+    atualizarImovel,
+    deletarImovel
+}
