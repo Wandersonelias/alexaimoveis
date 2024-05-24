@@ -1,12 +1,16 @@
 const Sequelize = require('sequelize');
 const database = require('../db');
 
-const userModel = database.define('users',{
+const users = database.define('users',{
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
+    },
+    nome: {
+        type: Sequelize.STRING,
+        allowNull: false,
     },
     email: {
         type: Sequelize.STRING,
@@ -22,7 +26,7 @@ const userModel = database.define('users',{
     },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
-})
+});
 
+module.exports = users;
 
-module.exports = userModel;
