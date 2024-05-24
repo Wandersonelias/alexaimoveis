@@ -1,5 +1,8 @@
 const Sequelize = require('sequelize');
 const database = require('../db');
+const agendamentoModel = require('./agendamentoModel');
+const Agendamentos = require('./agendamentoModel');
+
 
 const imovelModel = database.define('imoveis',{
     id: {
@@ -35,5 +38,17 @@ const imovelModel = database.define('imoveis',{
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
 })
+
+
+imovelModel.associate = function(models) {
+    imovelModel.hasMany(Agendamentos, { foreignKey: 'imoveiId', as: 'agendamentos' });
+}
+
+
+
+
+
+
+
 
 module.exports = imovelModel;

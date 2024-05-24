@@ -1,8 +1,11 @@
+const Agendamentos = require('../models/agendamentoModel');
 const imovelModel = require('../models/imovelModel');
 
 
 function getFindAllImoveis(){
-    return imovelModel.findAll();
+    return imovelModel.findAll({
+        include: Agendamentos
+    });
 }
 
 function createImovel(imovel) {
@@ -23,6 +26,13 @@ function deleteImovel(id) {
         where: { id }
     });
 }
+
+
+Agendamentos.belongsTo(imovelModel);
+imovelModel.hasMany(Agendamentos);
+
+
+
 
 module.exports = {
     getFindAllImoveis,

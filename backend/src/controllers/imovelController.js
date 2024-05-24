@@ -1,3 +1,4 @@
+const imovelModel = require('../models/imovelModel');
 const imovelRepository = require('../repositories/imovelRepository');
 
 async function listarImoveis(req,res,next) {
@@ -22,7 +23,13 @@ async function atualizarImovel(req,res,next) {
 
 function deletarImovel(req,res,next) {
     
+
+
 }
+
+
+imovelModel.associate
+
 
 module.exports = {
     listarImoveis,
