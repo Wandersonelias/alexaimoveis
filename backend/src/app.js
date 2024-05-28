@@ -9,6 +9,7 @@ const authController = require('./controllers/authController');
 const imovelController = require('./controllers/imovelController');
 const userController = require('./controllers/userController');
 const agendamentoController = require('./controllers/agendamentoController');
+const alexaController = require('./controllers/alexaController');
 
 
 
@@ -32,13 +33,17 @@ app.delete('/users/:id', userController.deletarUsuario);
 
 app.get('/imoveis',imovelController.listarImoveis);
 app.post('/imoveis',imovelController.cadastrarImovel);
-app.put('/imoveis/:id',authMiddleware,imovelController.atualizarImovel);
-app.delete('/imoveis/:id',authMiddleware,imovelController.deletarImovel);
+app.put('/imoveis/:id',imovelController.atualizarImovel);
+app.delete('/imoveis/:id',imovelController.deletarImovel);
 
 app.post('/agendamentos',agendamentoController.cadastrarAgendamento);
 app.get('/agendamentos',agendamentoController.listarAgendamentos);
-//app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
+app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
 //app.delete('/agendamentos/:id',agendamentoController.deletarAgendamento);
+
+
+app.get('/alexa/imoveis/:cidade', alexaController.listarImoveisDisponiveis);
+app.get('/alexa/imoveis/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
 
 
 

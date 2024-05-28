@@ -27,6 +27,10 @@ const imovelModel = database.define('imoveis',{
         type: Sequelize.STRING,
         allowNull: false
     },
+    cidade: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     valor: {
         type: Sequelize.FLOAT,
         allowNull: false

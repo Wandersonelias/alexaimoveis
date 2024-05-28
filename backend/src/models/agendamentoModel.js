@@ -35,6 +35,10 @@ const Agendamentos = database.define('agendamentos',{
         type: DataTypes.STRING,
         allowNull: false
     },
+    status: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
         createdAt: DataTypes.DATE,
         updatedAt: DataTypes.DATE
     

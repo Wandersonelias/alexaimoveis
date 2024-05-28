@@ -8,16 +8,20 @@ function getFindAllImoveis(){
     });
 }
 
+function getImovelById(id) {
+    return imovelModel.findByPk(id);
+}
+
 function createImovel(imovel) {
     return imovelModel.create(imovel);
 }
 
 //create update imovel use
 function updatedImovel(imovel,id) {  
-    imovelModel.update(imovel, {
+    return imovelModel.update(imovel, {
         where: { id }
     });
-    return imovelModel.findByPk(id);
+    
 }
 
 //create delete imovel
@@ -36,6 +40,7 @@ imovelModel.hasMany(Agendamentos);
 
 module.exports = {
     getFindAllImoveis,
+    getImovelById,
     createImovel,
     updatedImovel,
     deleteImovel
