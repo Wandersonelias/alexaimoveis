@@ -21,11 +21,53 @@ async function listarImoveisDisponiveisBairro(req,res,next){
 
 }
 
+async function listarImoveisDisponiveisTipo(req,res,next){
+    const cidade = req.params.cidade; // Cidade Usuário
+    const tipo = req.params.tipo;
+    const status = "Disponivel";
+    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,tipo)
+    res.status(200).json(imoveisDisponiveis);
+
+}
 
 
+async function listarImoveisDisponiveisBairroTipo(req,res,next){
+    const cidade = req.params.cidade; // Cidade Usuário
+    const tipo = req.params.tipo;
+    const bairro = req.params.bairro;
+    const status = "Disponivel";
+    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,tipo)
+    res.status(200).json(imoveisDisponiveis);
+
+}
+
+async function listarImoveisDisponiveisValor(req,res,next){
+    const cidade = req.params.cidade; // Cidade Usuário
+    const valor = parseInt(req.params.valor);
+    const status = "Disponivel";
+    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,valor)
+    res.status(200).json(imoveisDisponiveis);
+
+}
+
+async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
+    const cidade = req.params.cidade; // Cidade Usuário
+    const valor = parseInt(req.params.valor);
+    const tipo = req.params.tipo;
+    const bairro = req.params.bairro;
+    const status = "Disponivel";
+    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,bairro,tipo,valor)
+    res.status(200).json(imoveisDisponiveis);
+
+}
 
 
 module.exports = {
     listarImoveisDisponiveis,
-    listarImoveisDisponiveisBairro
+    listarImoveisDisponiveisBairro, 
+    listarImoveisDisponiveisTipo,
+    listarImoveisDisponiveisBairroTipo,
+    listarImoveisDisponiveisValor,
+    listarImoveisDisponiveisBairroTipoValor
+    
 }

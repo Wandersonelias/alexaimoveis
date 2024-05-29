@@ -44,6 +44,16 @@ app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
 
 app.get('/alexa/imoveis/:cidade', alexaController.listarImoveisDisponiveis);
 app.get('/alexa/imoveis/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
+app.get('/alexa/imoveis/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
+app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
+app.get('/alexa/imoveis/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
+app.get('/alexa/imoveis/:cidade/:bairro/:tipo/:valor', alexaController.listarImoveisDisponiveisBairroTipoValor);
+
+//Rotas de listagem e agendamentos
+
+
+
+
 
 
 
