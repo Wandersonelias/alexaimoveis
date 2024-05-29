@@ -23,7 +23,7 @@ function getAllImoveisTipoBairro(status,cidade,bairro,tipo){
     return imovelModel.findAll({where: {status: status, cidade: cidade, bairro: bairro,tipo: tipo}});
 
 }
-
+//teste de rotas
 function getAllImoveisValor(status,cidade,valor){
     //A cidade do usario vem por padrão pegar pela localização
     return imovelModel.findAll({where: {status: status, cidade: cidade, valor: valor}});
