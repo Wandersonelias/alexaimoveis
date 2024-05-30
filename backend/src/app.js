@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.get("/",(req,res,next)=>{
      
-       res.status(200).json({status: `Running - ${new Date().toLocaleDateString() - new Date().toLocaleDateString()}`}) 
+       res.status(200).json({status: `Running - ${new Date().toLocaleDateString()} - ${new Date().toLocaleDateString()}`}) 
 
 
 })
