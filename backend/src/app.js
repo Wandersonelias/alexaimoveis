@@ -12,8 +12,6 @@ const agendamentoController = require('./controllers/agendamentoController');
 const alexaController = require('./controllers/alexaController');
 
 
-
-
 //middlewares configurações 
 app.use(cors());
 app.use(helmet());
@@ -51,17 +49,14 @@ app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
 
 
 app.get('/alexa/imoveis/:cidade', alexaController.listarImoveisDisponiveis);
-app.get('/alexa/imoveis/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
-app.get('/alexa/imoveis/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
+app.get('/alexa/imoveis/bairro/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
+app.get('/alexa/imoveis/tipo/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
-app.get('/alexa/imoveis/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
+app.get('/alexa/imoveis/valor/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo/:valor', alexaController.listarImoveisDisponiveisBairroTipoValor);
 
 
 //Rotas de listagem e agendamentos
-
-
-
 
 
 
