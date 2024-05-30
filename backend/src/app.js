@@ -21,6 +21,15 @@ app.use(express.json());
 
 // middlewares de processamento
 
+
+app.get("/",(req,res,next)=>{
+     
+       res.status(200).json({status: `Running - ${new Date().toLocaleDateString() - new Date().toLocaleDateString()}`}) 
+
+
+})
+
+
 app.post('/login',authController.doLogin)
 app.post('/logout',authController.doLogout);
 
@@ -48,6 +57,7 @@ app.get('/alexa/imoveis/:cidade/:tipo', alexaController.listarImoveisDisponiveis
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
 app.get('/alexa/imoveis/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo/:valor', alexaController.listarImoveisDisponiveisBairroTipoValor);
+
 
 //Rotas de listagem e agendamentos
 
