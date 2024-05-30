@@ -21,11 +21,10 @@ app.use(express.json());
 
 // middlewares de processamento
 
-
+//Rota inicial raiz do sistema
 app.get("/",(req,res,next)=>{
      
-       res.status(200).json({status: `Running - ${new Date().toLocaleDateString()} - ${new Date().toTimeString()}`}) 
-
+    res.status(200).json({status: `Running - ${new Date().toLocaleDateString()}`}) 
 
 })
 
