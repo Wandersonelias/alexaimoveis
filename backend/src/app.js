@@ -31,20 +31,20 @@ app.post('/login',authController.doLogin)
 app.post('/logout',authController.doLogout);
 
 
-app.get('/users', userController.getFindAllUsers)
-app.post('/users', userController.cadastrarUsuario);
-app.put('/users/:id', userController.atulizarUsuario);
+app.get('/users',authMiddleware, userController.getFindAllUsers)
+app.post('/users', authMiddleware, userController.cadastrarUsuario);
+app.put('/users/:id', authMiddleware, userController.atulizarUsuario);
 app.delete('/users/:id', userController.deletarUsuario);
 
 
-app.get('/imoveis',imovelController.listarImoveis);
-app.post('/imoveis',imovelController.cadastrarImovel);
-app.put('/imoveis/:id',imovelController.atualizarImovel);
-app.delete('/imoveis/:id',imovelController.deletarImovel);
+app.get('/imoveis', authMiddleware, imovelController.listarImoveis);
+app.post('/imoveis', authMiddleware,imovelController.cadastrarImovel);
+app.put('/imoveis/:id', authMiddleware,imovelController.atualizarImovel);
+app.delete('/imoveis/:id',authMiddleware, imovelController.deletarImovel);
 
 app.post('/agendamentos',agendamentoController.cadastrarAgendamento);
-app.get('/agendamentos',agendamentoController.listarAgendamentos);
-app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
+app.get('/agendamentos', authMiddleware,agendamentoController.listarAgendamentos);
+app.put('/agendamentos/:id',authMiddleware, agendamentoController.atualizarAgendamento);
 //app.delete('/agendamentos/:id',agendamentoController.deletarAgendamento);
 
 
