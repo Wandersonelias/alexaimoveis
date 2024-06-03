@@ -48,8 +48,8 @@ app.delete('/imoveis/:id',authMiddleware, imovelController.deletarImovel);
 
 app.post('/agendamentos',agendamentoController.cadastrarAgendamento);
 app.get('/agendamentos', authMiddleware,agendamentoController.listarAgendamentos);
-app.get('/agendamentos/:id', authMiddleware,agendamentoController.detalharAgendamento);
 app.put('/agendamentos/:id',authMiddleware, agendamentoController.atualizarAgendamento);
+app.get('/agendamentos/:id', authMiddleware,agendamentoController.detalharAgendamento);
 //app.delete('/agendamentos/:id',agendamentoController.deletarAgendamento);
 
 

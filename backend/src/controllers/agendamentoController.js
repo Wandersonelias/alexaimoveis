@@ -38,5 +38,6 @@ async function detalharAgendamento(req,res,next) {
 module.exports = {
     cadastrarAgendamento,
     listarAgendamentos,
-    atualizarAgendamento
+    atualizarAgendamento,
+    detalharAgendamento
 }
