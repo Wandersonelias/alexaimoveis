@@ -49,5 +49,6 @@ module.exports = {
     listarImoveis,
     cadastrarImovel,
     atualizarImovel,
-    deletarImovel
+    deletarImovel,
+    detalharImovel,
 }

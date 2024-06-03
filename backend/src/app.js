@@ -39,7 +39,7 @@ app.delete('/users/:id', userController.deletarUsuario);
 
 app.get('/imoveis', authMiddleware, imovelController.listarImoveis);
 app.post('/imoveis', authMiddleware,imovelController.cadastrarImovel);
-app.get('/imoveis/:id', authMiddleware,imovelController.listarImovel);
+app.get('/imoveis/:id', authMiddleware,imovelController.deletarImovel);
 app.put('/imoveis/:id', authMiddleware,imovelController.atualizarImovel);
 app.delete('/imoveis/:id',authMiddleware, imovelController.deletarImovel);
 
