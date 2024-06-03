@@ -25,6 +25,15 @@ async function atualizarAgendamento(req,res,rext){
     }
 }
 
+async function detalharAgendamento(req,res,next) {
+    const id = req.params.id;
+    const agendamento = await agendamentoRepository.findAgendamentoById(id);
+    if(agendamento) {
+        res.status(200).json(agendamento)
+    }else{
+        res.status(404).json({message: 'Agendamento não encontrado'});
+    }
+}
 
 module.exports = {
     cadastrarAgendamento,

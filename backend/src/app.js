@@ -35,7 +35,7 @@ app.get('/users',authMiddleware, userController.getFindAllUsers)
 app.post('/users', authMiddleware, userController.cadastrarUsuario);
 app.put('/users/:id', authMiddleware, userController.atulizarUsuario);
 app.delete('/users/:id', userController.deletarUsuario);
-app.get('/users/:id', authMiddleware, userController.getFindUserById);
+app.get('/users/:id', authMiddleware, userController.detalharUsuario);
 
 
 
@@ -48,7 +48,7 @@ app.delete('/imoveis/:id',authMiddleware, imovelController.deletarImovel);
 
 app.post('/agendamentos',agendamentoController.cadastrarAgendamento);
 app.get('/agendamentos', authMiddleware,agendamentoController.listarAgendamentos);
-app.get('/agendamentos/:id', authMiddleware,agendamentoController.listarAgendamentoById);
+app.get('/agendamentos/:id', authMiddleware,agendamentoController.detalharAgendamento);
 app.put('/agendamentos/:id',authMiddleware, agendamentoController.atualizarAgendamento);
 //app.delete('/agendamentos/:id',agendamentoController.deletarAgendamento);
 
