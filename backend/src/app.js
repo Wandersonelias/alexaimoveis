@@ -35,16 +35,20 @@ app.get('/users',authMiddleware, userController.getFindAllUsers)
 app.post('/users', authMiddleware, userController.cadastrarUsuario);
 app.put('/users/:id', authMiddleware, userController.atulizarUsuario);
 app.delete('/users/:id', userController.deletarUsuario);
+app.get('/users/:id', authMiddleware, userController.getFindUserById);
+
+
 
 
 app.get('/imoveis', authMiddleware, imovelController.listarImoveis);
 app.post('/imoveis', authMiddleware,imovelController.cadastrarImovel);
-app.get('/imoveis/:id', authMiddleware,imovelController.deletarImovel);
+app.get('/imoveis/:id', authMiddleware,imovelController.detalharImovel);
 app.put('/imoveis/:id', authMiddleware,imovelController.atualizarImovel);
 app.delete('/imoveis/:id',authMiddleware, imovelController.deletarImovel);
 
 app.post('/agendamentos',agendamentoController.cadastrarAgendamento);
 app.get('/agendamentos', authMiddleware,agendamentoController.listarAgendamentos);
+app.get('/agendamentos/:id', authMiddleware,agendamentoController.listarAgendamentoById);
 app.put('/agendamentos/:id',authMiddleware, agendamentoController.atualizarAgendamento);
 //app.delete('/agendamentos/:id',agendamentoController.deletarAgendamento);
 
