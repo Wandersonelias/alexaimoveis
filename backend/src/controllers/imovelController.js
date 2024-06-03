@@ -11,6 +11,16 @@ async function cadastrarImovel(req, res, next) {
     res.status(201).json(imovel);
 }
 
+async function detalharImovel(req,res,next){
+    const id = req.params.id;
+    const imovel = await imovelRepository.getImovelById(id);
+    if (imovel) {
+        res.status(200).json(imovel);
+    } else {
+        res.status(400).json({ message: "Id inválido" })
+    }
+}
+
 async function atualizarImovel(req, res, next) {
     const imovel = req.body;
     const id = req.params.id;
