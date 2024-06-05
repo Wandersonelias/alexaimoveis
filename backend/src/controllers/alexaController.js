@@ -9,10 +9,10 @@ async function listarImoveisDisponiveis (req,res,next) {
     const status = "Disponível";
     try {
         const imoveisDisponiveis = await alexaRepository.getAllImoveisCidade(status,cidade);
-        if (imoveisDisponiveis.length === 0) {
-            return res.status(404).json({ error: 'Imoveis não encontrados' });
+        if(imoveisDisponiveis.length !== 0){
+            return res.status(200).json(imoveisDisponiveis);    
         }
-        res.status(200).json(imoveisDisponiveis);    
+        res.status(404).json({message: "Imóveis não encontrados"});
     } catch (error) {
         console.log(error);
         res.status(500).json(error)
