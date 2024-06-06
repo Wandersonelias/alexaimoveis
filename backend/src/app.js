@@ -35,7 +35,7 @@ app.get('/users',authMiddleware, userController.getFindAllUsers)
 app.post('/users', authMiddleware, userController.cadastrarUsuario);
 app.put('/users/:id', authMiddleware, userController.atulizarUsuario);
 app.delete('/users/:id',authMiddleware, userController.deletarUsuario);
-app.get('/users/:id', userController.detalharUsuario);
+app.get('/users/:id', authMiddleware, userController.detalharUsuario);
 
 
 
