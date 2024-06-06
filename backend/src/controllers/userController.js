@@ -17,7 +17,7 @@ async function cadastrarUsuario(req,res,next) {
 
 async function detalharUsuario(req,res,next){
     const id = req.params.id;   
-    const user = await userRepository.getUserById(req.params.id);
+    const user = await userRepository.getUser(req.params.id);
     if(user){ 
         return res.json(user);
     }else{ 
