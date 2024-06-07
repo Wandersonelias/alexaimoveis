@@ -12,14 +12,20 @@ const agendamentoController = require('./controllers/agendamentoController');
 const alexaController = require('./controllers/alexaController');
 
 
-
-
 //middlewares configurações 
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
 
 // middlewares de processamento
+
+//Rota inicial raiz do sistema
+app.get("/",(req,res,next)=>{
+     
+    res.status(200).json({status: `Running - ${new Date().toLocaleDateString()}`}) 
+
+})
+
 
 app.post('/login',authController.doLogin)
 app.post('/logout',authController.doLogout);
@@ -43,16 +49,14 @@ app.put('/agendamentos/:id',agendamentoController.atualizarAgendamento);
 
 
 app.get('/alexa/imoveis/:cidade', alexaController.listarImoveisDisponiveis);
-app.get('/alexa/imoveis/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
-app.get('/alexa/imoveis/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
+app.get('/alexa/imoveis/bairro/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
+app.get('/alexa/imoveis/tipo/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
-app.get('/alexa/imoveis/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
+app.get('/alexa/imoveis/valor/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo/:valor', alexaController.listarImoveisDisponiveisBairroTipoValor);
 
+
 //Rotas de listagem e agendamentos
-
-
-
 
 
 
