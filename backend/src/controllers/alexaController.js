@@ -1,3 +1,4 @@
+const e = require('cors');
 const alexaRepository = require('../repositories/alexaRepository');
 
 
@@ -6,8 +7,17 @@ async function listarImoveisDisponiveis (req,res,next) {
 
     const cidade = req.params.cidade;
     const status = "Disponível";
-    const imoveisDisponiveis = await alexaRepository.getAllImoveisCidade(status,cidade);
-    res.status(200).json(imoveisDisponiveis);
+    try {
+        const imoveisDisponiveis = await alexaRepository.getAllImoveisCidade(status,cidade);
+        if(imoveisDisponiveis.length !== 0){
+            return res.status(200).json(imoveisDisponiveis);    
+        }
+        res.status(404).json({message: "Imóveis não encontrados"});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error)
+    }
+    
 }
 
 //Buscar imoveis em por bairro que estão disponiveis na cidade do usuario da alexa

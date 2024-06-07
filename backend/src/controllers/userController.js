@@ -15,6 +15,19 @@ async function cadastrarUsuario(req,res,next) {
     
 }
 
+async function detalharUsuario(req,res,next){
+    const id = req.params.id;   
+    const user = await userRepository.getUser(req.params.id);
+    if(user){ 
+        return res.json(user);
+    }else{ 
+        return res.status(404).send('Usuario não encontrado');
+    }
+    
+}
+
+
+
 async function atulizarUsuario(req,res,next){
     const user = await userRepository.updateUser(req.body,req.params.id);
     return res.json(user);
@@ -32,6 +45,7 @@ module.exports = {
     getFindAllUsers,
     cadastrarUsuario, 
     atulizarUsuario,
-    deletarUsuario
+    deletarUsuario,
+    detalharUsuario
 }
 

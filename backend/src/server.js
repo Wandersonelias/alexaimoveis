@@ -2,8 +2,6 @@ const database = require('./db')
 //database.sync();
 
 
-
-
 const app = require('./app');
 const imovelModel = require('./models/imovelModel');
 
