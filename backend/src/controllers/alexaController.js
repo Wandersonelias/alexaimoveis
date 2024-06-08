@@ -55,7 +55,7 @@ async function listarImoveisDisponiveisTipo(req,res,next){
    
 
 }
-
+//Rotas alteradas
 
 async function listarImoveisDisponiveisBairroTipo(req,res,next){
     const cidade = req.params.cidade; // Cidade Usuário
