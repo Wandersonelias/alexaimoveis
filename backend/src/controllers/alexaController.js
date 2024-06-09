@@ -81,7 +81,7 @@ async function listarImoveisDisponiveisBairroTipo(req,res,next){
     const tipo = req.params.tipo;
     const bairro = req.params.bairro;
     const status = "Disponível";
-    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,bairro,tipo)
+    const imoveisDisponiveis = await alexaRepository.getAllImoveisTipoBairro(status,cidade,bairro,tipo)
     try {
         if(imoveisDisponiveis.length!==0){
             return res.status(200).json(imoveisDisponiveis);
@@ -103,7 +103,7 @@ async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
     const bairro = req.params.bairro;
     const status = "Disponível";
     try {
-        const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,bairro,tipo,valor)
+        const imoveisDisponiveis = await alexaRepository.getAllImoveisTipoBairroValor(status,cidade,bairro,tipo,valor)
         if(imoveisDisponiveis.length !==0){
             return res.status(200).json(imoveisDisponiveis);
         }
