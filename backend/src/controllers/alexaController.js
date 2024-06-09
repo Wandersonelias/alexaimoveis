@@ -64,7 +64,7 @@ async function listarImoveisDisponiveisBairroTipo(req,res,next){
     const status = "Disponível";
     const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,bairro,tipo)
     try {
-        if(imoveisDisponiveis!==0){
+        if(imoveisDisponiveis.length!==0){
             return res.status(200).json(imoveisDisponiveis);
         }
         res.status(404).json({message: "Imóveis não encontrados"});
@@ -81,7 +81,7 @@ async function listarImoveisDisponiveisValor(req,res,next){
     const status = "Disponível";
     try {
         const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,valor)
-        if(imoveisDisponiveis !== 0){
+        if(imoveisDisponiveis.length !== 0){
             return res.status(200).json(imoveisDisponiveis);
         }
         res.status(404).json({message: "Imóveis não encontrados"});
@@ -100,7 +100,7 @@ async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
     const status = "Disponível";
     try {
         const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,bairro,tipo,valor)
-        if(imoveisDisponiveis !==0){
+        if(imoveisDisponiveis.length !==0){
             return res.status(200).json(imoveisDisponiveis);
         }
         res.status(404).json({message: "Imóveis não encontrados"});

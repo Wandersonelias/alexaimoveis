@@ -56,8 +56,8 @@ app.get('/agendamentos/:id', authMiddleware,agendamentoController.detalharAgenda
 app.get('/alexa/imoveis/:cidade', alexaController.listarImoveisDisponiveis);
 app.get('/alexa/imoveis/bairro/:cidade/:bairro', alexaController.listarImoveisDisponiveisBairro);
 app.get('/alexa/imoveis/tipo/:cidade/:tipo', alexaController.listarImoveisDisponiveisTipo);
-app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
 app.get('/alexa/imoveis/valor/:cidade/:valor/', alexaController.listarImoveisDisponiveisValor);
+app.get('/alexa/imoveis/:cidade/:bairro/:tipo', alexaController.listarImoveisDisponiveisBairroTipo);
 app.get('/alexa/imoveis/:cidade/:bairro/:tipo/:valor', alexaController.listarImoveisDisponiveisBairroTipoValor);
 
 
