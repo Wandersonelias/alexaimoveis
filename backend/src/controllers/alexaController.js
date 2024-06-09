@@ -55,6 +55,25 @@ async function listarImoveisDisponiveisTipo(req,res,next){
    
 
 }
+
+
+async function listarImoveisDisponiveisValor(req,res,next){
+    const cidade = req.params.cidade; // Cidade Usuário
+    const valor = parseInt(req.params.valor);
+    const status = "Disponível";
+    try {
+        const imoveisDisponiveis = await alexaRepository.getAllImoveisValor(status,cidade,valor)
+        if(imoveisDisponiveis.length !== 0){
+            return res.status(200).json(imoveisDisponiveis);
+        }
+        res.status(404).json({message: "Imóveis não encontrados"});
+    } catch (error) {
+        res.status(500).json(error)
+    }
+    
+
+}
+
 //Rotas alteradas
 
 async function listarImoveisDisponiveisBairroTipo(req,res,next){
@@ -75,22 +94,7 @@ async function listarImoveisDisponiveisBairroTipo(req,res,next){
 
 }
 
-async function listarImoveisDisponiveisValor(req,res,next){
-    const cidade = req.params.cidade; // Cidade Usuário
-    const valor = parseInt(req.params.valor);
-    const status = "Disponível";
-    try {
-        const imoveisDisponiveis = await alexaRepository.getAllImoveisTipo(status,cidade,valor)
-        if(imoveisDisponiveis.length !== 0){
-            return res.status(200).json(imoveisDisponiveis);
-        }
-        res.status(404).json({message: "Imóveis não encontrados"});
-    } catch (error) {
-        res.status(500).json(error)
-    }
-    
 
-}
 
 async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
     const cidade = req.params.cidade; // Cidade Usuário
