@@ -18,13 +18,14 @@ const Agendamentos = database.define('agendamentos',{
       },
       cliente_email: {
         type: DataTypes.STRING,
+        defaultValue: "usuario@email.com",
         allowNull: false
     },
     imoveiId: {
         type: DataTypes.INTEGER,
     },
     data_agendamento: {
-        type: DataTypes.DATEONLY,
+        type: DataTypes.DATE,
         allowNull: false
     },
     hora_agendamento: {
@@ -37,6 +38,7 @@ const Agendamentos = database.define('agendamentos',{
     },
     status: {
         type: DataTypes.STRING,
+        defaultValue: 'confirmado',
         allowNull: false
     },
         createdAt: DataTypes.DATE,
