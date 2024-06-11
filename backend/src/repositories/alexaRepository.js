@@ -1,4 +1,5 @@
 const imovelModel = require('../models/imovelModel');
+const Agendamentos = require('../models/agendamentoModel');
 
 
 function getAllImoveisCidade(status,cidade) {
@@ -36,6 +37,9 @@ function getAllImoveisTipoBairroValor(status,cidade,bairro, tipo, valor){
 
 //Repositorys de listagem e agendamentos
 
+function createAgendamento(agendamento) {
+    return Agendamentos.create(agendamento);
+}
 
 
 
@@ -45,6 +49,7 @@ module.exports = {
     getAllImoveisTipo,
     getAllImoveisValor,
     getAllImoveisTipoBairro,
-    getAllImoveisTipoBairroValor
+    getAllImoveisTipoBairroValor,
+    createAgendamento
     
 }

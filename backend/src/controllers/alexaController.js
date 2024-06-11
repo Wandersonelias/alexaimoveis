@@ -115,9 +115,13 @@ async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
 }
 
 
-//Controllers de listagem e agendamentos
-//Controllers de listagem e agendamentos
-//Controllers de listagem e agendamentos
+
+async function cadastrarAgendamento(req,res,next) {
+    const agendamento = req.body;
+    const agendamentoCadastrado = await alexaRepository.createAgendamento(agendamento);
+    res.status(201).json(agendamentoCadastrado);
+}
+
 
 module.exports = {
     listarImoveisDisponiveis,
@@ -125,6 +129,7 @@ module.exports = {
     listarImoveisDisponiveisTipo,
     listarImoveisDisponiveisBairroTipo,
     listarImoveisDisponiveisValor,
-    listarImoveisDisponiveisBairroTipoValor
+    listarImoveisDisponiveisBairroTipoValor,
+    cadastrarAgendamento
     
 }
