@@ -15,7 +15,7 @@ const Agendamentos = database.define('agendamentos',{
     cliente_nome: {
         type: DataTypes.STRING,
         allowNull: false
-      },
+    },
       cliente_email: {
         type: DataTypes.STRING,
         defaultValue: "usuario@email.com",
@@ -26,11 +26,11 @@ const Agendamentos = database.define('agendamentos',{
     },
     data_agendamento: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     hora_agendamento: {
         type: DataTypes.TIME,
-        allowNull: false
+        allowNull: true
     },
     telefone: {
         type: DataTypes.STRING,

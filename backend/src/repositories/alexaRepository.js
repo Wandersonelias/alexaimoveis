@@ -37,8 +37,8 @@ function getAllImoveisTipoBairroValor(status,cidade,bairro, tipo, valor){
 
 //Repositorys de listagem e agendamentos
 
-function createAgendamento(agendamento) {
-    return Agendamentos.create(agendamento);
+function createAgendamento(agendamentos) {
+    return Agendamentos.create(agendamentos);
 }
 
 

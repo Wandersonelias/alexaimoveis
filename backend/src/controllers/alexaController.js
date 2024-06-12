@@ -117,8 +117,15 @@ async function listarImoveisDisponiveisBairroTipoValor(req,res,next){
 
 
 async function cadastrarAgendamento(req,res,next) {
-    const agendamento = req.body;
-    const agendamentoCadastrado = await alexaRepository.createAgendamento(agendamento);
+    //const nome = req.query.nome;
+    //const imovelId = req.query.imovel;
+    //const telefone = req.query.telefone
+    //const email = "usuario@oi.com"
+    //const data = new Date().toDateString()
+    //const hora = new Date().toTimeString()
+    const agendamentos = req.query;
+    const agendamentoCadastrado = await alexaRepository.createAgendamento(agendamentos);
+
     res.status(201).json(agendamentoCadastrado);
 }
 
