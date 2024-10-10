@@ -19,3 +19,12 @@ Este projeto busca utilizar uma interface de voz para facilitar o acesso ao merc
 
 ![image](https://github.com/user-attachments/assets/1046b11a-abc0-4f6a-9bfc-708fddb98ac4)
 
+## Tela inicial do Gerenciador Web
+
+![image](https://github.com/user-attachments/assets/9112c112-f5b2-4927-9722-27733e804e76)
+
+#link para repositorios de codigos gerados pela SDK Alexa para desenvolvimentos de interfaces de voz VUI
+
+![url](https://github.com/Wandersonelias/skillbuscarimoveis.git)
+
+
