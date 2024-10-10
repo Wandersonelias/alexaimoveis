@@ -23,7 +23,10 @@ Este projeto busca utilizar uma interface de voz para facilitar o acesso ao merc
 
 ![image](https://github.com/user-attachments/assets/9112c112-f5b2-4927-9722-27733e804e76)
 
-#link para repositorios de codigos gerados pela SDK Alexa para desenvolvimentos de interfaces de voz VUI
+#Repositorios de codigos gerados pela SDK Alexa para desenvolvimentos de interfaces de voz VUI
+
+![image](https://github.com/user-attachments/assets/e3f52ceb-5dfb-49cd-b97c-e4ef086ab946)
+
 
 [Skill Alexas - Buscar imóveis](https://github.com/Wandersonelias/skillbuscarimoveis.git)
 
